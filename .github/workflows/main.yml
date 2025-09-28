@@ -1,8 +1,4 @@
 name: DevCard
-
-permissions:
-  contents: write
-
 on:
   workflow_dispatch:
   push:
@@ -10,10 +6,11 @@ on:
       - main
   schedule:
     - cron: "0 0 * * *"
-
 jobs:
   devcard:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: devcard
         uses: dailydotdev/action-devcard@3.0.0
